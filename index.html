@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>frontx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>frontx logo gallery</title>
+  <base href="/">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400&display=swap" rel="stylesheet">
+  <style>
+    html {
+      font: calc(16px + 1vw)/1.8 Lora, serif
+    }
+    body {
+      position: relative;
+      margin: 0;
+      color: #333;
+      font: inherit;
+      background-color: #fff;
+    }
+  </style>
 </head>
 <body>
-  <h1>test</h1>
+  <frontx-gallery></frontx-gallery>
+  <script type="module" src="./components/frontx-gallery/frontx-gallery.js"></script>
 </body>
 </html>
