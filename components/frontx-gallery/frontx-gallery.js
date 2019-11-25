@@ -131,7 +131,7 @@ export class FrontxGallery extends LitElement {
       entries => {
         entries.forEach(({ isIntersecting, target }) => {
           if (isIntersecting && !target.getAttribute('src')) {
-            target.setAttribute('src', target.getAttribute('data-src'));
+            target.setAttribute('src', target.dataset.src);
           }
         });
       },
