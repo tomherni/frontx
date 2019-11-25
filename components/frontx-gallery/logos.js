@@ -53,15 +53,15 @@ export default {
       title: 'frontx FrontMania',
       url: 'logos/2019/frontmania.png',
     },
-    {
-      title: 'frontx Christmas',
-      url: 'logos/2019/christmas.png',
-    },
+    // {
+    //   title: 'frontx Christmas',
+    //   url: 'logos/2019/christmas.png',
+    // },
   ],
-  2020: [
-    {
-      title: 'frontx 2020',
-      url: 'logos/2020/2020.png',
-    },
-  ],
+  // 2020: [
+  //   {
+  //     title: 'frontx 2020',
+  //     url: 'logos/2020/2020.png',
+  //   },
+  // ],
 };

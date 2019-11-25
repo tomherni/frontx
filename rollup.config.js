@@ -1,3 +1,16 @@
 import { createDefaultConfig } from '@open-wc/building-rollup';
+import copy from 'rollup-plugin-copy';
 
-export default createDefaultConfig({ input: './index.html' });
+const config = createDefaultConfig({ input: './index.html' });
+
+export default {
+  ...config,
+  plugins: [
+    ...config.plugins,
+    copy({
+      targets: [
+        { src: 'logos', dest: 'dist' },
+      ],
+    }),
+  ],
+};
