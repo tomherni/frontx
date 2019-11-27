@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import '../frontx-logo/frontx-logo.js';
 
 export class FrontxNav extends LitElement {
   static get styles() {
@@ -31,7 +32,6 @@ export class FrontxNav extends LitElement {
         margin-right: 0.5em;
         padding: 0 0.35em 0.25em;
         font-size: 1.5em;
-        font-family: 'Comic Sans MS', 'Comic Sans', Lora, serif;
         text-decoration: none;
         line-height: normal;
         letter-spacing: 0.04em;
@@ -43,29 +43,15 @@ export class FrontxNav extends LitElement {
         }
       }
 
-      .💎 span:nth-child(1) {
-        color: #fdbf2d;
-      }
-      .💎 span:nth-child(2) {
-        color: #eb7d3c;
-      }
-      .💎 span:nth-child(3) {
-        color: #fc0d1b;
-      }
-      .💎 span:nth-child(4) {
-        color: #19af54;
-      }
-      .💎 span:nth-child(5) {
-        color: #1eb1ed;
-      }
-      .💎 span:nth-child(6) {
-        color: #6f359e;
+      .💎 frontx-logo {
+        display: block;
       }
 
-      .💎 span:nth-child(7) {
+      .💎 span {
         display: block;
         color: #cf0f1f;
         font-size: 0.53em;
+        font-family: 'Comic Sans MS', 'Comic Sans', Lora, serif;
       }
 
       nav {
@@ -111,7 +97,7 @@ export class FrontxNav extends LitElement {
     return html`
       <div>
         <a href="/" class="💎">
-          <span>f</span><span>r</span><span>o</span><span>n</span><span>t</span><span>x</span>
+          <frontx-logo></frontx-logo>
           <span>logo gallery</span>
         </a>
 
