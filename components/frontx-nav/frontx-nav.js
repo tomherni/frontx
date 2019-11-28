@@ -81,6 +81,7 @@ export class FrontxNav extends LitElement {
         font: inherit;
         font-size: 0.9em;
         text-decoration: none;
+        cursor: pointer;
       }
 
       li span {
@@ -91,6 +92,10 @@ export class FrontxNav extends LitElement {
         border: none;
       }
     `;
+  }
+
+  scrollTo(detail) {
+    this.dispatchEvent(new CustomEvent('scroll-year', { detail }));
   }
 
   render() {
@@ -104,13 +109,13 @@ export class FrontxNav extends LitElement {
         <nav>
           <ul>
             <li>
-              <a href=""><span>2018</span></a>
+              <a @click=${() => this.scrollTo('2018')}><span>2018</span></a>
             </li>
             <li>
-              <a href=""><span>2019</span></a>
+              <a @click=${() => this.scrollTo('2019')}><span>2019</span></a>
             </li>
             <li>
-              <a href=""><span>2020</span></a>
+              <a @click=${() => this.scrollTo('2020')}><span>2020</span></a>
             </li>
           </ul>
         </nav>

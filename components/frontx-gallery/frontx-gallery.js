@@ -148,10 +148,17 @@ export class FrontxGallery extends LitElement {
     }
   }
 
+  scroll(event) {
+    const el = this.shadowRoot.getElementById(`year-${event.detail}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   render() {
     return html`
       <header>
-        <frontx-nav></frontx-nav>
+        <frontx-nav @scroll-year=${this.scroll}></frontx-nav>
       </header>
 
       <main>
