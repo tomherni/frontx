@@ -8,9 +8,7 @@ export default {
   plugins: [
     ...config.plugins,
     copy({
-      targets: [
-        { src: 'logos', dest: 'dist' },
-      ],
+      targets: [{ src: 'assets', dest: 'dist' }],
     }),
   ],
 };

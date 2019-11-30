@@ -188,12 +188,12 @@ export class FrontxGallery extends LitElement {
             </div>
 
             ${items.map(
-              ({ title, url, text }) => html`
+              ({ title, path, text }) => html`
                 <article>
                   <figure>
                     <div class="🖼">
                       <div class="📦">
-                        <img src="" data-src="${url}" alt="${title}" />
+                        <img src="" data-src="assets/img/logos/${path}" alt="${title}" />
                       </div>
                     </div>
                     <figcaption><h3>${title}</h3></figcaption>
