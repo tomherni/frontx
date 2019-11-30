@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import logos from './logos.js';
+import '../frontx-logo/frontx-logo.js';
 import '../frontx-nav/frontx-nav.js';
 
 function when(condition, template) {
@@ -23,7 +24,7 @@ export class FrontxGallery extends LitElement {
         width: 80vw;
         max-width: 80vh;
         margin: 0 auto;
-        padding-top: 5.5em;
+        padding-top: 6em;
         text-align: center;
       }
 
@@ -34,21 +35,37 @@ export class FrontxGallery extends LitElement {
       }
 
       h1 {
-        margin: 0;
+        margin: 0 0 1.5em;
         font-weight: 400;
-        font-size: 1.5em;
+        font-size: 1.8em;
+        line-height: normal;
+      }
+
+      .🤓 {
+        position: relative;
+      }
+
+      .🤓::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        height: 1px;
+        background-color: #999;
+        z-index: -1;
       }
 
       h2 {
+        display: inline-block;
+        margin: 0;
+        padding: 0 24px;
         color: #999;
+        background-color: #fff;
       }
 
       article {
         margin: 4em 0;
-      }
-
-      article:first-of-type {
-        margin-top: 2em;
       }
 
       figure {
@@ -162,11 +179,13 @@ export class FrontxGallery extends LitElement {
       </header>
 
       <main>
-        <h1>frontx logos</h1>
+        <h1><frontx-logo></frontx-logo> logos</h1>
 
         ${this.logos.map(
           ([year, items]) => html`
-            <h2>${year}</h2>
+            <div class="🤓">
+              <h2 id="year-${year}">${year}</h2>
+            </div>
 
             ${items.map(
               ({ title, url, text }) => html`
