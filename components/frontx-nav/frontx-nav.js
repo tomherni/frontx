@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import logos from '../frontx-gallery/logos.js';
 import '../frontx-logo/frontx-logo.js';
 
 export class FrontxNav extends LitElement {
@@ -94,6 +95,11 @@ export class FrontxNav extends LitElement {
     `;
   }
 
+  constructor() {
+    super();
+    this.years = Object.keys(logos);
+  }
+
   scrollTo(detail) {
     this.dispatchEvent(new CustomEvent('scroll-year', { detail }));
   }
@@ -108,15 +114,13 @@ export class FrontxNav extends LitElement {
 
         <nav>
           <ul>
-            <li>
-              <a @click=${() => this.scrollTo('2018')}><span>2018</span></a>
-            </li>
-            <li>
-              <a @click=${() => this.scrollTo('2019')}><span>2019</span></a>
-            </li>
-            <li>
-              <a @click=${() => this.scrollTo('2020')}><span>2020</span></a>
-            </li>
+            ${this.years.map(
+              year => html`
+                <li>
+                  <a @click=${() => this.scrollTo(year)}><span>${year}</span></a>
+                </li>
+              `,
+            )}
           </ul>
         </nav>
       </div>
