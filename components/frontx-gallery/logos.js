@@ -28,7 +28,6 @@ export default {
     {
       title: 'frontx Bob',
       path: '2019/bob.png',
-      text: ['He came, he conquered... and abandoned us all', "But he's still a good guy"],
     },
     {
       title: 'frontx New York',
