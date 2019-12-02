@@ -52,10 +52,10 @@ export default {
       title: 'frontx FrontMania',
       path: '2019/frontmania.png',
     },
-    // {
-    //   title: 'frontx Christmas',
-    //   path: '2019/christmas.png',
-    // },
+    {
+      title: 'frontx Christmas',
+      path: '2019/christmas.png',
+    },
   ],
   // 2020: [
   //   {
