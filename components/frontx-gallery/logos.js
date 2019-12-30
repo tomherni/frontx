@@ -57,10 +57,14 @@ export default {
       path: '2019/christmas.png',
     },
   ],
-  // 2020: [
-  //   {
-  //     title: 'frontx 2020',
-  //     path: '2020/2020.png',
-  //   },
-  // ],
+  2020: [
+    // {
+    //   title: 'frontx 2020',
+    //   path: '2020/2020.png',
+    // },
+    {
+      title: 'frontx skiing trip',
+      path: '2020/skiing.png',
+    },
+  ],
 };
