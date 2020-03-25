@@ -66,5 +66,10 @@ export default {
       title: 'frontx skiing trip',
       path: '2020/skiing.png',
     },
+    {
+      title: 'frontx social distancing',
+      path: '2020/covid-19-distancing.png',
+      text: ['COVID-19 is not playing around'],
+    },
   ],
 };
