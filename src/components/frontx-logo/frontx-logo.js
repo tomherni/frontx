@@ -37,7 +37,8 @@ export class FrontxLogo extends LitElement {
 
   render() {
     return html`
-      <span>f</span><span>r</span><span>o</span><span>n</span><span>t</span><span>x</span>
+      <span>f</span><span>r</span><span>o</span><span>n</span><span>t</span
+      ><span>x</span>
     `;
   }
 }

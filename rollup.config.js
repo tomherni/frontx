@@ -1,14 +1,19 @@
-import { createDefaultConfig } from '@open-wc/building-rollup';
+import { createSpaConfig } from '@open-wc/building-rollup';
+import merge from 'deepmerge';
 import copy from 'rollup-plugin-copy';
 
-const config = createDefaultConfig({ input: './index.html' });
+const baseConfig = createSpaConfig({
+  outputDir: 'dist',
+  developmentMode: process.env.ROLLUP_WATCH === 'true',
+  injectServiceWorker: false,
+});
 
-export default {
-  ...config,
+export default merge(baseConfig, {
+  input: './index.html',
   plugins: [
-    ...config.plugins,
     copy({
+      // TODO: use imagemin
       targets: [{ src: 'assets', dest: 'dist' }],
     }),
   ],
-};
+});

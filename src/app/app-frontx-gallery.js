@@ -1,9 +1,9 @@
 import { LitElement, html, css } from 'lit-element';
-import logos from './logos.js';
-import '../frontx-logo/frontx-logo.js';
-import '../frontx-nav/frontx-nav.js';
+import { logos } from './logos.js';
+import '../components/frontx-logo/frontx-logo.js';
+import '../components/frontx-nav/frontx-nav.js';
 
-function when(condition, template) {
+export function when(condition, template) {
   return condition ? template() : undefined;
 }
 
@@ -138,50 +138,16 @@ export class FrontxGallery extends LitElement {
     `;
   }
 
-  constructor() {
-    super();
-    this.logos = Object.entries(logos);
-  }
-
-  firstUpdated() {
-    this.io = new IntersectionObserver(
-      entries => {
-        entries.forEach(({ isIntersecting, target }) => {
-          if (isIntersecting && !target.getAttribute('src')) {
-            target.setAttribute('src', target.dataset.src);
-          }
-        });
-      },
-      { threshold: 0 },
-    );
-
-    this.shadowRoot.querySelectorAll('main img').forEach(img => this.io.observe(img));
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    if (this.io) {
-      this.io.disconnect();
-    }
-  }
-
-  scroll(event) {
-    const el = this.shadowRoot.getElementById(`year-${event.detail}`);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   render() {
     return html`
       <header>
-        <frontx-nav @scroll-year=${this.scroll}></frontx-nav>
+        <frontx-nav @year-clicked=${this._scrollToYear}></frontx-nav>
       </header>
 
       <main>
         <h1><frontx-logo></frontx-logo> logos</h1>
 
-        ${this.logos.map(
+        ${Object.entries(logos).map(
           ([year, items]) => html`
             <div class="🤓">
               <h2 id="year-${year}">${year}</h2>
@@ -193,27 +159,51 @@ export class FrontxGallery extends LitElement {
                   <figure>
                     <div class="🖼">
                       <div class="📦">
-                        <img src="" data-src="assets/img/logos/${path}" alt="${title}" />
+                        <img
+                          src=""
+                          data-src="assets/images/logos/${path}"
+                          alt="${title}"
+                        />
                       </div>
                     </div>
                     <figcaption><h3>${title}</h3></figcaption>
                   </figure>
-                  ${when(text, () =>
-                    text.map(
-                      line =>
-                        html`
-                          <p>${line}</p>
-                        `,
-                    ),
-                  )}
+                  ${when(text, () => text.map(line => html`<p>${line}</p>`))}
                 </article>
-              `,
+              `
             )}
-          `,
+          `
         )}
       </main>
     `;
   }
+
+  firstUpdated() {
+    this._io = new IntersectionObserver(
+      entries => {
+        entries.forEach(({ isIntersecting, target }) => {
+          if (isIntersecting && !target.getAttribute('src')) {
+            target.setAttribute('src', target.dataset.src);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    this.shadowRoot
+      .querySelectorAll('img[data-src]')
+      .forEach(img => this._io.observe(img));
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this._io?.disconnect();
+  }
+
+  _scrollToYear(event) {
+    const element = this.shadowRoot.getElementById(`year-${event.detail}`);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
-customElements.define('frontx-gallery', FrontxGallery);
+customElements.define('app-frontx-gallery', FrontxGallery);

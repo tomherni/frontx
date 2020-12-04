@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-import logos from '../frontx-gallery/logos.js';
+import { logos } from '../../app/logos.js';
 import '../frontx-logo/frontx-logo.js';
 
 export class FrontxNav extends LitElement {
@@ -75,13 +75,15 @@ export class FrontxNav extends LitElement {
         }
       }
 
-      li a {
+      li button {
         display: inline-block;
         padding: 0 0.25em;
         color: inherit;
         font: inherit;
         font-size: 0.9em;
         text-decoration: none;
+        background-color: transparent;
+        border: none;
         cursor: pointer;
       }
 
@@ -89,19 +91,10 @@ export class FrontxNav extends LitElement {
         border-bottom: 1px solid #333;
       }
 
-      li a:hover span {
+      li button:hover span {
         border: none;
       }
     `;
-  }
-
-  constructor() {
-    super();
-    this.years = Object.keys(logos);
-  }
-
-  scrollTo(detail) {
-    this.dispatchEvent(new CustomEvent('scroll-year', { detail }));
   }
 
   render() {
@@ -114,17 +107,23 @@ export class FrontxNav extends LitElement {
 
         <nav>
           <ul>
-            ${this.years.map(
+            ${Object.keys(logos).map(
               year => html`
                 <li>
-                  <a @click=${() => this.scrollTo(year)}><span>${year}</span></a>
+                  <button @click=${() => this._onYearClicked(year)}>
+                    <span>${year}</span>
+                  </button>
                 </li>
-              `,
+              `
             )}
           </ul>
         </nav>
       </div>
     `;
+  }
+
+  _onYearClicked(detail) {
+    this.dispatchEvent(new CustomEvent('year-clicked', { detail }));
   }
 }
 

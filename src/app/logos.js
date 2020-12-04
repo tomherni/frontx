@@ -1,4 +1,4 @@
-export default {
+export const logos = {
   2018: [
     {
       title: 'frontx',
@@ -41,7 +41,10 @@ export default {
     {
       title: 'frontx Prague',
       path: '2019/prague.png',
-      text: ['Great conference, great city', 'Beer cheaper than water also helped'],
+      text: [
+        'Great conference, great city',
+        'Beer cheaper than water also helped',
+      ],
     },
     {
       title: 'frontx partner weekend',
