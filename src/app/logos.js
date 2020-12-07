@@ -74,5 +74,9 @@ export const logos = {
       path: '2020/covid-19-distancing.png',
       text: ['COVID-19 is not playing around'],
     },
+    {
+      title: 'frontx Christmas',
+      path: '2020/christmas.png',
+    },
   ],
 };
