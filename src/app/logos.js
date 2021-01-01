@@ -79,4 +79,10 @@ export const logos = {
       path: '2020-christmas.png',
     },
   ],
+  2021: [
+    {
+      title: 'frontx 2021',
+      path: '2021-new-years.png',
+    },
+  ],
 };
