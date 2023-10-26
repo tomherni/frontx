@@ -12,7 +12,7 @@ describe('App: frontx-gallery', () => {
     const images = element.shadowRoot.querySelectorAll('img[data-src]');
     await waitUntil(() => !!images[0].getAttribute('src'));
 
-    expect(images[0].getAttribute('src')).to.include('/2018/frontx.png');
+    expect(images[0].getAttribute('src')).to.include('/2018-frontx.png');
     expect(images[1].getAttribute('src')).to.be.empty;
   });
 

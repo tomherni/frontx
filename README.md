@@ -1,4 +1,4 @@
-# frontx-gallery
+# frontx
 
 Collection of frontx logos.
 
