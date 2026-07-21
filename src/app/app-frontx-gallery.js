@@ -152,11 +152,7 @@ export class FrontxGallery extends LitElement {
                   <figure>
                     <div class="🖼">
                       <div class="📦">
-                        <img
-                          src=""
-                          data-src="assets/images/logos/${path}"
-                          alt="${title}"
-                        />
+                        <img src="" data-src="logos/${path}" alt="${title}" />
                       </div>
                     </div>
                     <figcaption><h3>${title}</h3></figcaption>

@@ -9,8 +9,7 @@
   },
   "scripts": {
     "start": "vite --open index.html",
-    "build": "rm -rf dist && rollup -c rollup.config.js",
-    "start:build": "npm run build && wds --root-dir dist --app-index index.html --open --compatibility none",
+    "build": "rm -rf dist && vite build",
     "lint": "eslint \"**/*.js\" --fix",
     "format": "prettier \"**/*.{js,json}\" --write",
     "prepare": "husky"
@@ -20,16 +19,12 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@open-wc/building-rollup": "^3.0.2",
-    "@web/dev-server": "^0.3.6",
-    "deepmerge": "^4.3.1",
+    "@lit-labs/rollup-plugin-minify-html-literals": "^0.2.0",
     "eslint": "^10.5.0",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.7",
     "prettier": "^3.8.4",
-    "rollup": "^3.29.4",
-    "rollup-plugin-copy": "^3.5.0",
     "vite": "^8.1.5"
   },
   "lint-staged": {
