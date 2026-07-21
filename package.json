@@ -8,7 +8,7 @@
     "node": "^24.0.0"
   },
   "scripts": {
-    "start": "wds --app-index index.html --node-resolve --open --watch",
+    "start": "vite --open index.html",
     "build": "rm -rf dist && rollup -c rollup.config.js",
     "start:build": "npm run build && wds --root-dir dist --app-index index.html --open --compatibility none",
     "lint": "eslint \"**/*.js\" --fix",
@@ -29,7 +29,8 @@
     "lint-staged": "^17.0.7",
     "prettier": "^3.8.4",
     "rollup": "^3.29.4",
-    "rollup-plugin-copy": "^3.5.0"
+    "rollup-plugin-copy": "^3.5.0",
+    "vite": "^8.1.5"
   },
   "lint-staged": {
     "**/*.js": "eslint --fix",
