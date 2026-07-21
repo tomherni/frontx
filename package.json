@@ -9,7 +9,6 @@
   },
   "scripts": {
     "start": "wds --app-index index.html --node-resolve --open --watch",
-    "test": "wtr src/**/test/*.test.js --node-resolve --coverage",
     "build": "rm -rf dist && rollup -c rollup.config.js",
     "start:build": "npm run build && wds --root-dir dist --app-index index.html --open --compatibility none",
     "lint": "eslint \"**/*.js\" --fix",
@@ -22,9 +21,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@open-wc/building-rollup": "^3.0.2",
-    "@open-wc/testing": "^3.2.0",
     "@web/dev-server": "^0.3.6",
-    "@web/test-runner": "^0.17.2",
     "deepmerge": "^4.3.1",
     "eslint": "^10.5.0",
     "globals": "^17.6.0",
