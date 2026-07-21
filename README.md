@@ -2,20 +2,15 @@
 
 Collection of frontx logos.
 
-## Installation
+## Getting started
 
 ```bash
-$ npm install
-```
-
-## Run development environment
-
-```bash
+$ npm ci
 $ npm start
 ```
 
-## Build & serve production bundle
+## Build production bundle
 
 ```bash
-$ npm run start:build
+$ npm run build
 ```
