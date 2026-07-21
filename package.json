@@ -5,13 +5,14 @@
   "author": "Tom Herni <tomherni@gmail.com>",
   "type": "module",
   "engines": {
-    "node": "^24.0.0"
+    "node": "^24.0.0",
+    "npm": "^11.0.0"
   },
   "scripts": {
     "start": "vite --open index.html",
     "build": "rm -rf dist && vite build",
     "lint": "eslint \"**/*.js\" --fix",
-    "format": "prettier \"**/*.{js,json}\" --write",
+    "format": "prettier \"**/*.{html,js,json}\" --write",
     "prepare": "husky"
   },
   "dependencies": {
@@ -29,6 +30,6 @@
   },
   "lint-staged": {
     "**/*.js": "eslint --fix",
-    "**/*.{js,json}": "prettier --write"
+    "**/*.{html,js,json}": "prettier --write"
   }
 }

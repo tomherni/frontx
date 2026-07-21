@@ -5,10 +5,6 @@ import '../components/frontx-logo/frontx-logo.js';
 import '../components/frontx-nav/frontx-nav.js';
 
 export class FrontxGallery extends LitElement {
-  static properties = {
-    logos: { type: Array },
-  };
-
   static styles = css`
     * {
       box-sizing: border-box;
