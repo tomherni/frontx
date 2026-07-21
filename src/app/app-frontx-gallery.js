@@ -5,10 +5,6 @@ import '../components/frontx-logo/frontx-logo.js';
 import '../components/frontx-nav/frontx-nav.js';
 
 export class FrontxGallery extends LitElement {
-  static properties = {
-    logos: { type: Array },
-  };
-
   static styles = css`
     * {
       box-sizing: border-box;
@@ -20,10 +16,8 @@ export class FrontxGallery extends LitElement {
       margin: 0 auto;
       padding-top: 6em;
       text-align: center;
-    }
 
-    @media (min-width: 1280px) {
-      main {
+      @media (width >= 1280px) {
         padding-top: 2em;
       }
     }
@@ -37,17 +31,17 @@ export class FrontxGallery extends LitElement {
 
     .🤓 {
       position: relative;
-    }
 
-    .🤓::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      left: 0;
-      height: 1px;
-      background-color: #999;
-      z-index: -1;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        height: 1px;
+        background-color: #999;
+        z-index: -1;
+      }
     }
 
     h2 {
@@ -75,7 +69,7 @@ export class FrontxGallery extends LitElement {
       padding-top: 100%;
     }
 
-    .🖼 > .📦 {
+    .📦 {
       position: absolute;
       top: 0;
       right: 0;
@@ -85,20 +79,20 @@ export class FrontxGallery extends LitElement {
       height: 100%;
       margin: auto;
       background-color: #fff;
-    }
 
-    .🖼 > .📦::after {
-      content: 'Loading...';
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 4em;
-      margin: auto;
-      line-height: 4em;
-      z-index: 1;
+      &::after {
+        content: 'Loading...';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 4em;
+        margin: auto;
+        line-height: 4em;
+        z-index: 1;
+      }
     }
 
     img {
@@ -107,10 +101,10 @@ export class FrontxGallery extends LitElement {
       width: 100%;
       height: 100%;
       z-index: 2;
-    }
 
-    img[src=''] {
-      visibility: hidden;
+      &[src=''] {
+        visibility: hidden;
+      }
     }
 
     h3 {
@@ -124,10 +118,10 @@ export class FrontxGallery extends LitElement {
 
     p {
       margin: 1.5em 0 0;
-    }
 
-    p + p {
-      margin: 0.25em 0 0;
+      + p {
+        margin: 0.25em 0 0;
+      }
     }
   `;
 
@@ -138,7 +132,7 @@ export class FrontxGallery extends LitElement {
       </header>
 
       <main>
-        <h1><frontx-logo></frontx-logo> logos</h1>
+        <h1><frontx-logo></frontx-logo>&nbsp;logos</h1>
 
         ${Object.entries(logos).map(
           ([year, items]) => html`
@@ -152,11 +146,7 @@ export class FrontxGallery extends LitElement {
                   <figure>
                     <div class="🖼">
                       <div class="📦">
-                        <img
-                          src=""
-                          data-src="assets/images/logos/${path}"
-                          alt="${title}"
-                        />
+                        <img src="" data-src="logos/${path}" alt="${title}" />
                       </div>
                     </div>
                     <figcaption><h3>${title}</h3></figcaption>
