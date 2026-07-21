@@ -15,10 +15,8 @@ export class FrontxNav extends LitElement {
       border-bottom: 1px solid #ccc;
       box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.2);
       z-index: 3;
-    }
 
-    @media (min-width: 1280px) {
-      div {
+      @media (width >= 1280px) {
         width: auto;
         flex-direction: column;
         border: none;
@@ -35,23 +33,21 @@ export class FrontxNav extends LitElement {
       text-decoration: none;
       line-height: normal;
       letter-spacing: 0.04em;
-    }
 
-    @media (min-width: 1280px) {
-      .💎 {
+      @media (width >= 1280px) {
         margin: 0.25em;
       }
-    }
 
-    .💎 frontx-logo {
-      display: block;
-    }
+      frontx-logo {
+        display: block;
+      }
 
-    .💎 span {
-      display: block;
-      color: #cf0f1f;
-      font-size: 0.53em;
-      font-family: 'Comic Sans MS', 'Comic Sans', Lora, serif;
+      span {
+        display: block;
+        color: #cf0f1f;
+        font-size: 0.53em;
+        font-family: 'Comic Sans MS', 'Comic Sans', Lora, serif;
+      }
     }
 
     nav {
@@ -66,32 +62,30 @@ export class FrontxNav extends LitElement {
 
     li {
       display: inline-block;
-    }
 
-    @media (min-width: 1280px) {
-      li {
+      @media (width >= 1280px) {
         display: block;
       }
-    }
 
-    li button {
-      display: inline-block;
-      padding: 0 0.25em;
-      color: inherit;
-      font: inherit;
-      font-size: 0.9em;
-      text-decoration: none;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-    }
+      button {
+        display: inline-block;
+        padding: 0 0.25em;
+        color: inherit;
+        font: inherit;
+        font-size: 0.9em;
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
 
-    li span {
-      border-bottom: 1px solid #333;
-    }
+        span {
+          border-bottom: 1px solid #333;
+        }
 
-    li button:hover span {
-      border: none;
+        &:hover span {
+          border: none;
+        }
+      }
     }
   `;
 
